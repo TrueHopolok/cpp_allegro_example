@@ -1,6 +1,4 @@
 **/.vscode
-**/.clang-format
-**/.clangd
 
 build/windows/*
 !build/windows/*.dll

@@ -1,4 +1,4 @@
-g++ src/example_engine_3.cpp src/engine.cpp ^
+g++ src/main.cpp src/base/node.cpp src/base/engine/game_engine.cpp src/base/engine/engine.cpp ^
 -o build/windows/program ^
 -std=c++17 ^
 -Iallegro/include ^
