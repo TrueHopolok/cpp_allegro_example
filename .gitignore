@@ -1,0 +1,9 @@
+**/.vscode
+**/.clang-format
+**/.clangd
+
+build/windows/*
+!build/windows/*.dll
+
+build/linux/*
+!build/linux/.gitkeep
