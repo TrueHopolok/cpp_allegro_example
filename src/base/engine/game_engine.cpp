@@ -30,9 +30,13 @@ void GameEngine::render() {
     }
 
     // happens at the end of the frame
-    while (!joinable.empty()) {
-        everyone[joinable.front().node->id] = joinable.front();
-        joinable.pop();
+    while (!queue_to_free.empty()) {
+        everyone.erase(queue_to_free.front());
+        queue_to_free.pop();
+    }
+    while (!queue_to_join.empty()) {
+        everyone[queue_to_join.front().node->id] = queue_to_join.front();
+        queue_to_join.pop();
     }
 }
 
@@ -48,7 +52,7 @@ GameEngine &GameEngine::get_instance() {
 
 void GameEngine::append(Node *node, int p_order, int z_order) {
     node->id = get_id();
-    joinable.push(GameNode{false, node, z_order, p_order});
+    queue_to_join.push(GameNode{false, node, z_order, p_order});
 }
 
-void GameEngine::remove(int id) { everyone.erase(id); }
+void GameEngine::remove(int id) { queue_to_free.push(id); }

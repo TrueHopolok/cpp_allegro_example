@@ -20,10 +20,12 @@ class GameEngine : public Engine {
         }
     };
 
-    std::queue<GameNode> joinable;
+    std::queue<GameNode> queue_to_join;
+    std::queue<int> queue_to_free;
     std::map<int, GameNode> everyone;
 
     GameEngine() : Engine(640, 360, 60, true) {}
+    ~GameEngine() {};
 
     void process(double delta_time) override;
     void render() override;

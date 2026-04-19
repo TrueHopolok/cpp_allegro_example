@@ -1,3 +1,6 @@
 #include "base/engine/game_engine.hpp"
 
-int main() { GameEngine::get_instance().start(); }
+int main() {
+    GameEngine &gm = GameEngine::get_instance();
+    gm.start();
+}
