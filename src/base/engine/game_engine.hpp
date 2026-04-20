@@ -24,8 +24,12 @@ class GameEngine : public Engine {
     std::queue<int> queue_to_free;
     std::map<int, GameNode> everyone;
 
-    GameEngine() : Engine(640, 360, 60, true) {}
-    ~GameEngine() {};
+    double max_delta_time;
+
+    GameEngine() : Engine(640, 360, 60, true) {
+        max_delta_time = 1.0 / fps * 2;
+    }
+    ~GameEngine() {}
 
     void process(double delta_time) override;
     void render() override;

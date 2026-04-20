@@ -1,10 +1,18 @@
 #include "game_engine.hpp"
 #include "../node.hpp"
+#include <iostream>
 #include <queue>
 #include <utility>
 #include <vector>
 
 void GameEngine::process(double delta_time) {
+    if (delta_time > max_delta_time) {
+        delta_time = max_delta_time;
+        if (verbose) {
+            std::cout << "[WARN]: game experiencing lags "
+                      << "some frames might be dropped" << std::endl;
+        }
+    }
     std::priority_queue<GameNode, std::vector<GameNode>> process_queue;
     for (const std::pair<int, GameNode> p : everyone) {
         GameNode node = p.second;
