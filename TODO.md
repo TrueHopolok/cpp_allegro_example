@@ -1,7 +1,5 @@
-1) Add collider logic into GameManager
+1) Fix not launching the game
 
-2) Add overlap logic in the Collission Shapes
+2) Write a game
 
-3) Write a game
-
-4) Profit
+3) Profit
