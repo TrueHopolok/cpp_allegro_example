@@ -1,4 +1,4 @@
-1) Fix not launching the game
+1) Add all .cpp files into build script
 
 2) Write a game
 
