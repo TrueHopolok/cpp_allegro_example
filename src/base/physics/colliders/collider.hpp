@@ -28,7 +28,7 @@ class Collider : public Node {
     // Called if 2 nodes collide.
     // Method will be called after
     // all nodes recieved `process` call.
-    void on_collission();
+    void on_collission(Collider *other);
 };
 
 #endif

@@ -6,23 +6,26 @@
 #include <queue>
 
 class Node;
+class Collider;
 
 class GameEngine : public Engine {
   private:
     struct GameNode {
-        bool proccessing;
         Node *node;
+        bool processing;
+        bool is_collider;
         int z_order; // render layer, less means earlier
         int p_order; // process layer, more means earlier
         bool operator<(const GameNode other) const {
-            return proccessing ? p_order < other.p_order
-                               : z_order > other.z_order;
+            return processing ? p_order < other.p_order
+                              : z_order > other.z_order;
         }
     };
 
     std::queue<GameNode> queue_to_join;
     std::queue<int> queue_to_free;
     std::map<int, GameNode> everyone;
+    std::map<int, Collider *> colliders;
 
     double max_delta_time;
 

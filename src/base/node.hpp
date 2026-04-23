@@ -15,6 +15,7 @@ class Node {
     void process(double delta_time);
     void render();
     void free();
+    virtual ~Node() = default;
 };
 
 #endif
