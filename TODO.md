@@ -1,5 +1,3 @@
-1) Add all .cpp files into build script
+1) Write a game
 
-2) Write a game
-
-3) Profit
+2) Profit
