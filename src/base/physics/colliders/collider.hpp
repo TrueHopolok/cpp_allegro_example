@@ -1,8 +1,8 @@
 #ifndef COLLIDER
 #define COLLIDER
 
-#include "../node.hpp"
-#include "collission_shapes/collission_shape.hpp"
+#include "../../node.hpp"
+#include "../shapes/collission_shape.hpp"
 #include <cstdint>
 
 class Collider : public Node {
@@ -19,11 +19,11 @@ class Collider : public Node {
 
     // This collider won't be moved when 2 nodes collide
     // NOTE: Collider in this case should not move.
-    bool immovable;
+    bool is_static;
 
     // This is a trigger collider, thus won't move
     // both self and collided node.
-    bool sensor;
+    bool is_sensor;
 
     // Called if 2 nodes collide.
     // Method will be called after
