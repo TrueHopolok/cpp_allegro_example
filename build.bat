@@ -1,6 +1,8 @@
 g++ src/main.cpp ^
 src/base/engine/game_engine.cpp src/base/engine/engine.cpp src/base/node.cpp ^
 src/base/physics/shapes/square_collission_shape.cpp src/base/physics/shapes/circle_collission_shape.cpp src/base/physics/shapes/intersection_circle_square.cpp ^
+src/entities/wall/wall.cpp ^
+src/scenes/main/main.cpp ^
 -o build/windows/program ^
 -std=c++17 ^
 -Iallegro/include ^
